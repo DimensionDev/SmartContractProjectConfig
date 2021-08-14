@@ -20,17 +20,7 @@ const HardhatNetworkConfig = {
         chainId: 1337,
     },
     hardhat: {
-        // blockGasLimit added from 6,000,000 to 8,000,000 (deploy erc721 test token with 260 initial supply needs more gas)
-        blockGasLimit: 30000000,
-        // workarond for `hardhat coverage` gasPrice problem:
-        // https://github.com/sc-forks/solidity-coverage/issues/652
-        initialBaseFeePerGas: 0,
-        hardfork: 'london',
-        chainId: 31337,
-        gas: 'auto',
-        accounts: {
-            count: 100,
-        }
+
     },
     mainnet: {
         url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
@@ -180,7 +170,7 @@ const HardhatNetworkConfig = {
 };
 
 const HardhatSolidityConfig = {
-    version: "0.8.0",
+    version: "0.7.6",
     settings: {
         optimizer: {
             enabled: true,
@@ -196,7 +186,7 @@ const EtherscanConfig = {
 };
 
 const HardhatOvmConfig = {
-    solcVersion: '0.8.0',
+    solcVersion: '0.7.6+commit.3b061308',
 };
 
 const HardhatGasReporterConfig = {
