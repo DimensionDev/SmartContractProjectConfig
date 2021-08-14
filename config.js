@@ -79,6 +79,34 @@ const HardhatNetworkConfig = {
       accounts: project_secret.private_key_list,
       chainId: 421611,
     },
+    arbitrum: {
+        url: 'https://arb1.arbitrum.io/rpc',
+        accounts: project_secret.private_key_list,
+        chainId: 42161,
+    },
+    arbitrum_rinkeby: {
+      url: 'https://rinkeby.arbitrum.io/rpc',
+      accounts: project_secret.private_key_list,
+      chainId: 421611,
+    },
+    optimism: {
+        // https://community.optimism.io/docs/developers/networks.html#optimistic-kovan
+        // We currently have a whitelist system in place that limits who can deploy
+        // contracts to this network (for security reasons). We know this isn't
+        // ideal and we really appreciate your patience
+        url: 'https://optimism-mainnet.infura.io/v3/' + project_secret.infura_project_id,
+        accounts: project_secret.private_key_list,
+        chainId: 10,
+        ovm: true,
+   },
+   optimism_kovan: {
+        url: 'https://optimism-kovan.infura.io/v3/' + project_secret.infura_project_id,
+        accounts: project_secret.private_key_list,
+        chainId: 69,
+        // ProviderError: tx.gasPrice must be 15000000
+        gasPrice: 15000000,
+        ovm: true,
+    },
     xdai: {
         url: 'https://rpc.xdaichain.com',
         accounts: project_secret.private_key_list,
@@ -112,7 +140,7 @@ const HardhatNetworkConfig = {
 };
 
 const HardhatSolidityConfig = {
-    version: '0.8.0',
+    version: "0.8.0",
     settings: {
         optimizer: {
             enabled: true,
@@ -125,6 +153,10 @@ const EtherscanConfig = {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
     apiKey: project_secret.etherscan_api_key
+};
+
+const HardhatOvmConfig = {
+    solcVersion: '0.8.0',
 };
 
 const HardhatGasReporterConfig = {
@@ -195,6 +227,7 @@ const ContractAddressConfig = {
 module.exports = {
     HardhatNetworkConfig,
     HardhatSolidityConfig,
+    HardhatOvmConfig,
     ChainlinkVRFConfig,
     HardhatGasReporterConfig,
     ContractAddressConfig,
