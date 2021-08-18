@@ -22,7 +22,10 @@ const HardhatNetworkConfig = {
     hardhat: {
         blockGasLimit: 6000000,
         chainId: 31337,
-        gas: 'auto',
+        forking: {
+          url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
+          // blockNumber: 12746317,
+        },
     },
     mainnet: {
         url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
@@ -91,49 +94,56 @@ const ChainlinkVRFConfig = {
         VRFCoordinator: '0xf0d54349aDdcf704F77AE15b96510dEA15cb7952',
         LinkAddress: '0x514910771AF9Ca656af840dff83E8264EcF986CA',
         KeyHash: '0xAA77729D3466CA35AE8D28B3BBAC7CC36A5031EFDC430821C02BC31A238AF445',
-        Fee: ethers.utils.parseUnits(`2`, 18).toString(),
+        Fee: ethers.utils.parseUnits(`2`, 18),
     },
     rinkeby: {
         VRFCoordinator: '0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B',
         LinkAddress: '0x01BE23585060835E02B77ef475b0Cc51aA1e0709',
         KeyHash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311',
-        Fee: ethers.utils.parseUnits(`0.1`, 18).toString(),
+        Fee: ethers.utils.parseUnits(`0.1`, 18),
     },
     bsc_mainnet: {
         VRFCoordinator: '0x747973a5A2a4Ae1D3a8fDF5479f1514F65Db9C31',
         LinkAddress: '0x404460C6A5EdE2D891e8297795264fDe62ADBB75',
         KeyHash: '0xc251acd21ec4fb7f31bb8868288bfdbaeb4fbfec2df3735ddbd4f7dc8d60103c',
-        Fee: ethers.utils.parseUnits(`0.2`, 18).toString(),
+        Fee: ethers.utils.parseUnits(`0.2`, 18),
     },
     matic_mainnet: {
         VRFCoordinator: '0x3d2341ADb2D31f1c5530cDC622016af293177AE0',
         LinkAddress: '0xb0897686c545045aFc77CF20eC7A532E3120E0F1',
         KeyHash: '0xf86195cf7690c55907b2b611ebb7343a6f649bff128701cc542f0569e2c549da',
-        Fee: ethers.utils.parseUnits(`0.0001`, 18).toString(),
+        Fee: ethers.utils.parseUnits(`0.0001`, 18),
     },
 };
 
 const ContractAddressConfig = {
     mainnet: {
         MaskTokenAddress : '0x69af81e73a73b40adf4f3d4223cd9b1ece623074',
+        UniswapRouterAddress : '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
     },
     ropsten: {
         MaskTokenAddress : '0x0f6d3ec17ad4be4641fff47b98d970a2845c1365',
+        UniswapRouterAddress : '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
     },
     rinkeby: {
         MaskTokenAddress : '0x46ed2e50a9f27de0dc47b04e7580e8e91fce7246',
+        UniswapRouterAddress : '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
     },
     bsc_test: {
         MaskTokenAddress : '0xC119574D5Fb333F5AC018658D4d8b5035E16bf39',
+        UniswapRouterAddress : '0x0000000000000000000000000000000000000000',
     },
     bsc_mainnet: {
         MaskTokenAddress : '0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3',
+        UniswapRouterAddress : '0x0000000000000000000000000000000000000000',
     },
     matic_mumbai_test: {
         MaskTokenAddress : '0xC119574D5Fb333F5AC018658D4d8b5035E16bf39',
+        UniswapRouterAddress : '0x0000000000000000000000000000000000000000',
     },
     matic_mainnet: {
         MaskTokenAddress : '0x0000000000000000000000000000000000000000',
+        UniswapRouterAddress : '0x0000000000000000000000000000000000000000',
     },
 };
 
