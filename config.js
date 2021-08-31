@@ -22,10 +22,10 @@ const HardhatNetworkConfig = {
     hardhat: {
         blockGasLimit: 6000000,
         chainId: 31337,
-        forking: {
-          url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
-          // blockNumber: 12746317,
-        },
+        gas: 'auto',
+        accounts: {
+            count: 100,
+        }
     },
     mainnet: {
         url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
@@ -68,6 +68,12 @@ const HardhatNetworkConfig = {
         url: 'https://rpc-mainnet.matic.network',
         accounts: project_secret.private_key_list,
         chainId: 137,
+        gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
+    },
+    xdai: {
+        url: 'https://rpc.xdaichain.com',
+        accounts: project_secret.private_key_list,
+        chainId: 100,
         gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
     },
 };
