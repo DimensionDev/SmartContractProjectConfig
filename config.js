@@ -60,13 +60,13 @@ const HardhatNetworkConfig = {
         gasPrice: ethers.utils.parseUnits('5', 'gwei').toNumber(),
     },
     matic_mumbai_test: {
-        url: 'https://rpc-mumbai.matic.today',
+        url: 'https://matic-mumbai.chainstacklabs.com',
         accounts: project_secret.private_key_list,
         chainId: 80001,
         gasPrice: ethers.utils.parseUnits('2', 'gwei').toNumber(),
     },
     matic_mainnet: {
-        url: 'https://rpc-mainnet.matic.network',
+        url: 'https://polygon-rpc.com/',
         accounts: project_secret.private_key_list,
         chainId: 137,
         gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
