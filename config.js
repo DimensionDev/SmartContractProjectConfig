@@ -71,6 +71,18 @@ const HardhatNetworkConfig = {
         chainId: 137,
         gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
     },
+    arbitrum: {
+        url: 'https://arb1.arbitrum.io/rpc',
+        accounts: project_secret.private_key_list,
+        chainId: 42161,
+        gasPrice: ethers.utils.parseUnits('0.4', 'gwei').toNumber(),
+    },
+    arbitrum_rinkeby: {
+      url: 'https://rinkeby.arbitrum.io/rpc',
+      accounts: project_secret.private_key_list,
+      chainId: 421611,
+      gasPrice: ethers.utils.parseUnits('10', 'gwei').toNumber(),
+    },
     xdai: {
         url: 'https://rpc.xdaichain.com',
         accounts: project_secret.private_key_list,
