@@ -20,7 +20,8 @@ const HardhatNetworkConfig = {
         chainId: 1337,
     },
     hardhat: {
-        blockGasLimit: 6000000,
+        // blockGasLimit added from 6,000,000 to 8,000,000 (deploy erc721 test token with 260 initial supply needs more gas)
+        blockGasLimit: 8000000,
         chainId: 31337,
         gas: 'auto',
         accounts: {
