@@ -32,62 +32,53 @@ const HardhatNetworkConfig = {
         url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
         accounts: project_secret.private_key_list,
         chainId: 1,
-        gasPrice: ethers.utils.parseUnits('10', 'gwei').toNumber(),
         // to solve timeout error, increase the hardcoded `waitAndValidateDeployment` in `@openzeppelin/upgrades-core/dist/deployment.js`
+        // gasPrice: ethers.utils.parseUnits('40', 'gwei').toNumber(),
     },
     ropsten: {
         url: 'https://ropsten.infura.io/v3/' + project_secret.infura_project_id,
         accounts: project_secret.private_key_list,
         chainId: 3,
-        gasPrice: ethers.utils.parseUnits('10', 'gwei').toNumber(),
     },
     rinkeby: {
         url: "https://rinkeby.infura.io/v3/" + project_secret.infura_project_id,
         accounts: project_secret.private_key_list,
         chainId: 4,
-        gasPrice: ethers.utils.parseUnits('5', 'gwei').toNumber(),
     },
     bsc_test: {
         url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
         accounts: project_secret.private_key_list,
         chainId: 97,
-        gasPrice: ethers.utils.parseUnits('25', 'gwei').toNumber(),
     },
     bsc_mainnet: {
         url: 'https://bsc-dataseed1.binance.org:443',
         accounts: project_secret.private_key_list,
         chainId: 56,
-        gasPrice: ethers.utils.parseUnits('5', 'gwei').toNumber(),
     },
     matic_mumbai_test: {
         url: 'https://matic-mumbai.chainstacklabs.com',
         accounts: project_secret.private_key_list,
         chainId: 80001,
-        gasPrice: ethers.utils.parseUnits('2', 'gwei').toNumber(),
     },
     matic_mainnet: {
         url: 'https://polygon-rpc.com/',
         accounts: project_secret.private_key_list,
         chainId: 137,
-        gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
     },
     arbitrum: {
         url: 'https://arb1.arbitrum.io/rpc',
         accounts: project_secret.private_key_list,
         chainId: 42161,
-        gasPrice: ethers.utils.parseUnits('0.4', 'gwei').toNumber(),
     },
     arbitrum_rinkeby: {
       url: 'https://rinkeby.arbitrum.io/rpc',
       accounts: project_secret.private_key_list,
       chainId: 421611,
-      gasPrice: ethers.utils.parseUnits('10', 'gwei').toNumber(),
     },
     xdai: {
         url: 'https://rpc.xdaichain.com',
         accounts: project_secret.private_key_list,
         chainId: 100,
-        gasPrice: ethers.utils.parseUnits('1', 'gwei').toNumber(),
     },
 };
 
