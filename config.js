@@ -95,6 +95,12 @@ const HardhatSolidityConfig = {
     },
 };
 
+const EtherscanConfig = {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: project_secret.etherscan_api_key
+};
+
 const HardhatGasReporterConfig = {
     currency: 'USD',
     gasPrice: 21,
@@ -166,4 +172,5 @@ module.exports = {
     ChainlinkVRFConfig,
     HardhatGasReporterConfig,
     ContractAddressConfig,
+    EtherscanConfig,
 }
