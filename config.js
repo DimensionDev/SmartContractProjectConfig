@@ -83,6 +83,26 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 100,
     },
+    fantom: {
+        url: 'https://rpcapi.fantom.network',
+        accounts: project_secret.private_key_list,
+        chainId: 250,
+    },
+    celo: {
+        url: 'https://forno.celo.org',
+        accounts: project_secret.private_key_list,
+        chainId: 42220,
+    },
+    avalanche_test: {
+        url: 'https://api.avax-test.network/ext/bc/C/rpc',
+        accounts: project_secret.private_key_list,
+        chainId: 43113,
+    },
+    avalanche: {
+        url: 'https://api.avax.network/ext/bc/C/rpc',
+        accounts: project_secret.private_key_list,
+        chainId: 43114,
+    },
 };
 
 const HardhatSolidityConfig = {
