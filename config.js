@@ -21,7 +21,7 @@ const HardhatNetworkConfig = {
     },
     hardhat: {
         // blockGasLimit added from 6,000,000 to 8,000,000 (deploy erc721 test token with 260 initial supply needs more gas)
-        blockGasLimit: 8000000,
+        blockGasLimit: 30000000,
         // workarond for `hardhat coverage` gasPrice problem:
         // https://github.com/sc-forks/solidity-coverage/issues/652
         initialBaseFeePerGas: 0,
