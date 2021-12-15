@@ -83,6 +83,11 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 100,
     },
+    goerli: {
+        url: "https://goerli.infura.io/v3/" + project_secret.infura_project_id,
+        accounts: project_secret.private_key_list,
+        chainId: 5,
+    },
     fantom: {
         url: 'https://rpcapi.fantom.network',
         accounts: project_secret.private_key_list,
