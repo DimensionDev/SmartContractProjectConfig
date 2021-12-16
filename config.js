@@ -25,6 +25,7 @@ const HardhatNetworkConfig = {
         // workarond for `hardhat coverage` gasPrice problem:
         // https://github.com/sc-forks/solidity-coverage/issues/652
         initialBaseFeePerGas: 0,
+        hardfork: 'london',
         chainId: 31337,
         gas: 'auto',
         accounts: {
