@@ -79,16 +79,6 @@ const HardhatNetworkConfig = {
       accounts: project_secret.private_key_list,
       chainId: 421611,
     },
-    arbitrum: {
-        url: 'https://arb1.arbitrum.io/rpc',
-        accounts: project_secret.private_key_list,
-        chainId: 42161,
-    },
-    arbitrum_rinkeby: {
-      url: 'https://rinkeby.arbitrum.io/rpc',
-      accounts: project_secret.private_key_list,
-      chainId: 421611,
-    },
     optimism: {
         // https://community.optimism.io/docs/developers/networks.html#optimistic-kovan
         // We currently have a whitelist system in place that limits who can deploy
@@ -136,6 +126,32 @@ const HardhatNetworkConfig = {
         url: 'https://api.avax.network/ext/bc/C/rpc',
         accounts: project_secret.private_key_list,
         chainId: 43114,
+    },
+    metis: {
+        url: 'https://andromeda.metis.io/?owner=1088',
+        accounts: project_secret.private_key_list,
+        chainId: 1088,
+    },
+    metis_testnet: {
+        url: 'https://stardust.metis.io/?owner=588',
+        accounts: project_secret.private_key_list,
+        chainId: 588,
+    },
+    aurora: {
+        url: 'https://mainnet.aurora.dev',
+        accounts: project_secret.private_key_list,
+        chainId: 1313161554,
+    },
+    testnet_aurora: {
+        url: 'https://testnet.aurora.dev',
+        accounts: project_secret.private_key_list,
+        chainId: 1313161555,
+        gasPrice: 120 * 1000000000
+      },
+    fuse: {
+        url: 'rpc.fuse.io',
+        accounts: project_secret.private_key_list,
+        chainId: 122,
     },
 };
 
