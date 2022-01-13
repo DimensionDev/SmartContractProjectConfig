@@ -137,6 +137,21 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 43114,
     },
+    aurora: {
+        url: 'https://mainnet.aurora.dev',
+        accounts: project_secret.private_key_list,
+        chainId: 1313161554,
+    },
+    aurora_test: {
+        url: 'https://testnet.aurora.dev/',
+        accounts: project_secret.private_key_list,
+        chainId: 1313161555,
+    },
+    fuse: {
+        url: 'https://rpc.fuse.io',
+        accounts: project_secret.private_key_list,
+        chainId: 122,
+    },
 };
 
 const HardhatSolidityConfig = {
