@@ -162,6 +162,16 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 28,
     },
+    metis: {
+        url: 'https://andromeda.metis.io/?owner=1088',
+        accounts: project_secret.private_key_list,
+        chainId: 1088,
+    },
+    metis_test: {
+        url: 'https://stardust.metis.io/?owner=588',
+        accounts: project_secret.private_key_list,
+        chainId: 28,
+    },
 };
 
 const HardhatSolidityConfig = {
