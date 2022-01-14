@@ -152,6 +152,16 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 122,
     },
+    boba: {
+        url: 'https://mainnet.boba.network/',
+        accounts: project_secret.private_key_list,
+        chainId: 288,
+    },
+    boba_test: {
+        url: 'https://rinkeby.boba.network/',
+        accounts: project_secret.private_key_list,
+        chainId: 28,
+    },
 };
 
 const HardhatSolidityConfig = {
