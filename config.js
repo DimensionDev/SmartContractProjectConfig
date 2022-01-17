@@ -172,6 +172,11 @@ const HardhatNetworkConfig = {
         accounts: project_secret.private_key_list,
         chainId: 28,
     },
+    moonriver: {
+        url: 'https://rpc.moonriver.moonbeam.network',
+        accounts: project_secret.private_key_list,
+        chainId: 1285,
+    },
 };
 
 const HardhatSolidityConfig = {
