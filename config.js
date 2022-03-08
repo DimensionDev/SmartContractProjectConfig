@@ -186,7 +186,18 @@ const HardhatNetworkConfig = {
     url: 'https://evmtestnet.confluxrpc.com',
     accounts: project_secret.private_key_list,
     chainId: 71,
+  },
+  harmony: {
+    url: "https://api.s0.t.hmny.io/",
+    accounts: project_secret.private_key_list,
+    chainId: 1666600000,
+  },
+  harmony_test:{
+    url: "https://api.s0.b.hmny.io/",
+    accounts: project_secret.private_key_list,
+    chainId: 1666700000,
   }
+
 };
 
 const HardhatSolidityConfig = {
@@ -269,6 +280,14 @@ const ContractAddressConfig = {
     UniswapRouterAddress: '0x0000000000000000000000000000000000000000',
   },
   matic_mainnet: {
+    MaskTokenAddress: '0x0000000000000000000000000000000000000000',
+    UniswapRouterAddress: '0x0000000000000000000000000000000000000000',
+  },
+  harmony_mainnet: {
+    MaskTokenAddress: '0x0000000000000000000000000000000000000000',
+    UniswapRouterAddress: '0x0000000000000000000000000000000000000000',
+  },
+  harmony_test: {
     MaskTokenAddress: '0x0000000000000000000000000000000000000000',
     UniswapRouterAddress: '0x0000000000000000000000000000000000000000',
   },
