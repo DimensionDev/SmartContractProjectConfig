@@ -186,6 +186,16 @@ const HardhatNetworkConfig = {
     url: 'https://evmtestnet.confluxrpc.com',
     accounts: project_secret.private_key_list,
     chainId: 71,
+  },
+  harmony: {
+    url: 'https://api.harmony.one',
+    accounts: project_secret.private_key_list,
+    chainId: 1666600000,
+  },
+  harmony_test: {
+    url: 'https://api.s0.b.hmny.io',
+    accounts: project_secret.private_key_list,
+    chainId: 1666700000,
   }
 };
 
