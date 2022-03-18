@@ -170,7 +170,7 @@ const HardhatNetworkConfig = {
   metis_test: {
     url: 'https://stardust.metis.io/?owner=588',
     accounts: project_secret.private_key_list,
-    chainId: 28,
+    chainId: 588,
   },
   moonriver: {
     url: 'https://rpc.moonriver.moonbeam.network',
