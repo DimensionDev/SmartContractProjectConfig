@@ -196,7 +196,12 @@ const HardhatNetworkConfig = {
     url: 'https://api.s0.b.hmny.io',
     accounts: project_secret.private_key_list,
     chainId: 1666700000,
-  }
+  },
+  kardia: {
+    url: 'https://rpc.kardiachain.io',
+    accounts: project_secret.private_key_list,
+    chainId: 24,
+  },
 };
 
 const HardhatSolidityConfig = {
