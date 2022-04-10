@@ -54,7 +54,7 @@ const HardhatNetworkConfig = {
     accounts: project_secret.private_key_list,
     chainId: 97,
   },
-  bsc_mainnet: {
+  bsc: {
     url: 'https://bsc-dataseed1.binance.org:443',
     accounts: project_secret.private_key_list,
     chainId: 56,
@@ -64,7 +64,7 @@ const HardhatNetworkConfig = {
     accounts: project_secret.private_key_list,
     chainId: 80001,
   },
-  matic_mainnet: {
+  matic: {
     url: 'https://polygon-rpc.com/',
     accounts: project_secret.private_key_list,
     chainId: 137,
@@ -177,12 +177,12 @@ const HardhatNetworkConfig = {
     accounts: project_secret.private_key_list,
     chainId: 1285,
   },
-  conflux_eSpace: {
+  conflux_espace: {
     url: 'https://evm.confluxrpc.com',
     accounts: project_secret.private_key_list,
     chainId: 1030,
   },
-  conflux_eSpace_test: {
+  conflux_espace_test: {
     url: 'https://evmtestnet.confluxrpc.com',
     accounts: project_secret.private_key_list,
     chainId: 71,
