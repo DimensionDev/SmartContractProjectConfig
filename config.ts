@@ -1,20 +1,24 @@
-const ethers = require("ethers");
-const fs = require('fs');
+import path from "path";
+import "ethers";
+import { ethers } from "ethers";
 
-let project_secret;
 
-const ProjectSecrestConfigFile = './project.secret.js';
-const ProjectSecrestDummyConfigFile = './project.secret.sample.js';
+const ProjectSecretConfigFile = path.resolve(__dirname, 'project.secret.json');
+const DummyProjectSecretConfigFile = path.resolve(__dirname, 'project.secret.sample.json');
+let param;
 
 try {
-  project_secret = require(ProjectSecrestConfigFile);
+  param = require(ProjectSecretConfigFile);
+} catch (error) {
+  console.log('WARN: loading secret from from tempalte file, might be invalid.')
+  param = require(DummyProjectSecretConfigFile);
 }
-catch (err) {
-  project_secret = require(ProjectSecrestDummyConfigFile);
-  console.log('Warning: loading secrets from tempalte file, might be invalid');
-}
+const pkList: string[] = param.privateKeyList;
+const infuraId: string = param.infuraProjectId;
+const etherscanKey: string = param.etherscanApi;
 
-const HardhatNetworkConfig = {
+
+export const HardhatNetworkConfig = {
   localhost: {
     url: 'http://127.0.0.1:8545',
     chainId: 1337,
@@ -33,60 +37,50 @@ const HardhatNetworkConfig = {
     }
   },
   mainnet: {
-    url: 'https://mainnet.infura.io/v3/' + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: 'https://mainnet.infura.io/v3/' + infuraId,
+    accounts: pkList,
     chainId: 1,
     // to solve timeout error, increase the hardcoded `waitAndValidateDeployment` in `@openzeppelin/upgrades-core/dist/deployment.js`
     // gasPrice: ethers.utils.parseUnits('40', 'gwei').toNumber(),
   },
   ropsten: {
-    url: 'https://ropsten.infura.io/v3/' + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: 'https://ropsten.infura.io/v3/' + infuraId,
+    accounts: pkList,
     chainId: 3,
   },
   rinkeby: {
-    url: "https://rinkeby.infura.io/v3/" + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: "https://rinkeby.infura.io/v3/" + infuraId,
+    accounts: pkList,
     chainId: 4,
   },
   bsc_test: {
     url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 97,
   },
   bsc: {
     url: 'https://bsc-dataseed1.binance.org:443',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 56,
   },
   matic_mumbai_test: {
     url: 'https://matic-mumbai.chainstacklabs.com',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 80001,
   },
   matic: {
     url: 'https://polygon-rpc.com/',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 137,
   },
   arbitrum: {
     url: 'https://arb1.arbitrum.io/rpc',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 42161,
   },
   arbitrum_rinkeby: {
     url: 'https://rinkeby.arbitrum.io/rpc',
-    accounts: project_secret.private_key_list,
-    chainId: 421611,
-  },
-  arbitrum: {
-    url: 'https://arb1.arbitrum.io/rpc',
-    accounts: project_secret.private_key_list,
-    chainId: 42161,
-  },
-  arbitrum_rinkeby: {
-    url: 'https://rinkeby.arbitrum.io/rpc',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 421611,
   },
   optimism: {
@@ -94,14 +88,14 @@ const HardhatNetworkConfig = {
     // We currently have a whitelist system in place that limits who can deploy
     // contracts to this network (for security reasons). We know this isn't
     // ideal and we really appreciate your patience
-    url: 'https://optimism-mainnet.infura.io/v3/' + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: 'https://optimism-mainnet.infura.io/v3/' + infuraId,
+    accounts: pkList,
     chainId: 10,
     ovm: true,
   },
   optimism_kovan: {
-    url: 'https://optimism-kovan.infura.io/v3/' + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: 'https://optimism-kovan.infura.io/v3/' + infuraId,
+    accounts: pkList,
     chainId: 69,
     // ProviderError: tx.gasPrice must be 15000000
     gasPrice: 15000000,
@@ -109,102 +103,102 @@ const HardhatNetworkConfig = {
   },
   xdai: {
     url: 'https://rpc.xdaichain.com',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 100,
   },
   goerli: {
-    url: "https://goerli.infura.io/v3/" + project_secret.infura_project_id,
-    accounts: project_secret.private_key_list,
+    url: "https://goerli.infura.io/v3/" + infuraId,
+    accounts: pkList,
     chainId: 5,
   },
   fantom: {
     url: 'https://rpcapi.fantom.network',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 250,
   },
   celo: {
     url: 'https://forno.celo.org',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 42220,
   },
   avalanche_test: {
     url: 'https://api.avax-test.network/ext/bc/C/rpc',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 43113,
   },
   avalanche: {
     url: 'https://api.avax.network/ext/bc/C/rpc',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 43114,
   },
   aurora: {
     url: 'https://mainnet.aurora.dev',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1313161554,
   },
   aurora_test: {
     url: 'https://testnet.aurora.dev/',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1313161555,
   },
   fuse: {
     url: 'https://rpc.fuse.io',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 122,
   },
   boba: {
     url: 'https://mainnet.boba.network/',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 288,
   },
   boba_test: {
     url: 'https://rinkeby.boba.network/',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 28,
   },
   metis: {
     url: 'https://andromeda.metis.io/?owner=1088',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1088,
   },
   metis_test: {
     url: 'https://stardust.metis.io/?owner=588',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 588,
   },
   moonriver: {
     url: 'https://rpc.moonriver.moonbeam.network',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1285,
   },
   conflux_espace: {
     url: 'https://evm.confluxrpc.com',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1030,
   },
   conflux_espace_test: {
     url: 'https://evmtestnet.confluxrpc.com',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 71,
   },
   harmony: {
     url: 'https://api.harmony.one',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1666600000,
   },
   harmony_test: {
     url: 'https://api.s0.b.hmny.io',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 1666700000,
   },
   kardia: {
     url: 'https://rpc.kardiachain.io',
-    accounts: project_secret.private_key_list,
+    accounts: pkList,
     chainId: 24,
   },
 };
 
-const HardhatSolidityConfig = {
+export const HardhatSolidityConfig = {
   version: "0.8.2",
   settings: {
     optimizer: {
@@ -214,24 +208,24 @@ const HardhatSolidityConfig = {
   },
 };
 
-const EtherscanConfig = {
-  // Your API key for Etherscan
-  // Obtain one at https://etherscan.io/
-  apiKey: project_secret.etherscan_api_key
-};
-
-const HardhatOvmConfig = {
+export const HardhatOvmConfig = {
   solcVersion: '0.8.0',
 };
 
-const HardhatGasReporterConfig = {
+export const HardhatGasReporterConfig = {
   currency: 'USD',
   gasPrice: 21,
   enabled: true,
 };
 
+export const EtherscanConfig = {
+  // Your API key for Etherscan
+  // Obtain one at https://etherscan.io/
+  apiKey: etherscanKey
+};
+
 // https://docs.chain.link/docs/vrf-contracts/
-const ChainlinkVRFConfig = {
+export const ChainlinkVRFConfig = {
   mainnet: {
     VRFCoordinator: '0xf0d54349aDdcf704F77AE15b96510dEA15cb7952',
     LinkAddress: '0x514910771AF9Ca656af840dff83E8264EcF986CA',
@@ -258,7 +252,7 @@ const ChainlinkVRFConfig = {
   },
 };
 
-const ContractAddressConfig = {
+export const ContractAddressConfig = {
   mainnet: {
     MaskTokenAddress: '0x69af81e73a73b40adf4f3d4223cd9b1ece623074',
     UniswapRouterAddress: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
@@ -289,12 +283,4 @@ const ContractAddressConfig = {
   },
 };
 
-module.exports = {
-  HardhatNetworkConfig,
-  HardhatSolidityConfig,
-  HardhatOvmConfig,
-  ChainlinkVRFConfig,
-  HardhatGasReporterConfig,
-  ContractAddressConfig,
-  EtherscanConfig,
-}
+
