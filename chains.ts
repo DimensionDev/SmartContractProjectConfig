@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs/promises";
 import { parse } from "csv-parse/sync";
 
-const CHAIN_INFO_PATH = path.resolve(__dirname, 'Chains.csv');
+const CHAIN_INFO_PATH = path.resolve(__dirname, "Chains.csv");
 type ChainType = {
   ChainID: number,
   RPC: string,
@@ -15,21 +15,25 @@ export async function getChainID(chainName: string): Promise<number> {
   return chainInfo[chainName].ChainID;
 }
 
-export async function getBlockBrowserPath(chainName: string, param: string, section: string): Promise<string> {
+export async function getAllBrowserPath(section: string): Promise<Record<string, string>> {
   const chainInfo = await loadChainInfo();
-  const domain = chainInfo[chainName].BlockExplorerDomain;
-  let zone: string;
-  if (section == 'address') {
-    zone = section;
-  } else {
-    zone = chainInfo[chainName].BlockExplorerBlock;
+  let browserPath: Record<string, string> = {};
+  for (const chainName of Object.keys(chainInfo)) {
+    const domain = chainInfo[chainName].BlockExplorerDomain;
+    let zone: string;
+    if (section == "address") {
+      zone = section;
+    } else {
+      zone = chainInfo[chainName].BlockExplorerBlock;
+    }
+    browserPath[chainName] = `https://${domain}/${zone}/`;
   }
-  return `https://${domain}/${zone}/${param}`;
+  return browserPath;
 }
 
 async function loadChainInfo(): Promise<Record<string, ChainType>> {
   const data = await fs.readFile(CHAIN_INFO_PATH, "utf-8");
-  const columns = ['Chain', 'ChainID', 'RPC', 'BlockExplorerDomain', 'BlockExplorerBlock']
+  const columns = ["Chain", "ChainID", "RPC", "BlockExplorerDomain", "BlockExplorerBlock"]
   const records = parse(data, { delimiter: ',', columns, from: 2 });
   let chainInfo: Record<string, ChainType> = {};
   for (const { Chain, ChainID, RPC, BlockExplorerDomain, BlockExplorerBlock } of records) {
