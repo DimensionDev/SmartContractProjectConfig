@@ -1,14 +1,9 @@
 import path from "path";
 import fs from "fs/promises";
 import { parse } from "csv-parse/sync";
+import { ChainType } from "./types";
 
 const CHAIN_INFO_PATH = path.resolve(__dirname, "Chains.csv");
-type ChainType = {
-  ChainID: number,
-  RPC: string,
-  BlockExplorerDomain: string,
-  BlockExplorerBlock: string,
-};
 
 export async function getChainID(chainName: string): Promise<number> {
   const chainInfo = await loadChainInfo();
