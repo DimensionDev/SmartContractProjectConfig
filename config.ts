@@ -9,8 +9,9 @@ const privateKey: string = process.env.PRIVATE_KEY ?? "0xFFFFFFFFFFFFFFFFFFFFFFF
 const infuraId: string = process.env.INFURA_PROJECT_ID ?? "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
 const etherscanKey: string = process.env.ETHERSCAN_KEY ?? "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
 
-export function getHardhatNetworkConfig(): Record<string, Network> {
-  const networks: Record<string, Network> = require("./info/networks.json");
+export async function getHardhatNetworkConfig(): Promise<Record<string, Network>> {
+  const networksModule = await import("./info/networks.json");
+  const networks: Record<string, Network> = networksModule.default;
   for (const chain of Object.keys(networks)) {
     let url = networks[chain].url;
     url = url?.replace("<INFURA-PROJECT-ID>", infuraId);
@@ -21,7 +22,6 @@ export function getHardhatNetworkConfig(): Record<string, Network> {
   }
   return networks;
 }
-
 // #region Constant config
 export const HardhatSolidityConfig = {
   version: "0.8.2",
