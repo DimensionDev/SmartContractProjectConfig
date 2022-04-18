@@ -36,6 +36,7 @@ export interface ContractAddresses {
 }
 
 export type ChainType = {
+  Chain: string,
   ChainID: number;
   RPC: string;
   BlockExplorerDomain: string;
