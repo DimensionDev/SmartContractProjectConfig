@@ -1,0 +1,23 @@
+{
+  "mainnet": {
+    "MaskTokenAddress": "0x69af81e73a73b40adf4f3d4223cd9b1ece623074",
+    "UniswapRouterAddress": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+  },
+  "ropsten": {
+    "MaskTokenAddress": "0x0f6d3ec17ad4be4641fff47b98d970a2845c1365",
+    "UniswapRouterAddress": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+  },
+  "rinkeby": {
+    "MaskTokenAddress": "0x46ed2e50a9f27de0dc47b04e7580e8e91fce7246",
+    "UniswapRouterAddress": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+  },
+  "bsc_test": {
+    "MaskTokenAddress": "0xC119574D5Fb333F5AC018658D4d8b5035E16bf39"
+  },
+  "bsc_mainnet": {
+    "MaskTokenAddress": "0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3"
+  },
+  "matic_mumbai_test": {
+    "MaskTokenAddress": "0xC119574D5Fb333F5AC018658D4d8b5035E16bf39"
+  }
+}
