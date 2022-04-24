@@ -26,6 +26,5 @@ export async function getAllBrowserPath(section: string): Promise<Record<string,
 async function loadChainInfo(): Promise<Array<ChainType>> {
   const data = await fs.readFile(CHAIN_INFO_PATH, "utf-8");
   const columns = ["Chain", "ChainID", "RPC", "BlockExplorerDomain", "BlockExplorerBlock"]
-  const records = parse(data, { delimiter: ',', columns, from: 2 });
-  return records;
+  return parse(data, { delimiter: ',', columns, from: 2 });
 }
