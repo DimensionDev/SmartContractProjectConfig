@@ -2,7 +2,6 @@ import path from "path";
 import fs from "fs/promises";
 import { parse } from "csv-parse/sync";
 import { ChainType } from "./types";
-import * as lodash from "lodash";
 
 const CHAIN_INFO_PATH = path.resolve(__dirname, "chains.csv");
 
