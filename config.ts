@@ -5,9 +5,9 @@ import { Network, ContractAddresses, VRF } from "./types";
 
 envConfig({ path: resolve(__dirname, "./.env") });
 
-const privateKey: string = process.env.PRIVATE_KEY ?? `0x${'F'.repeat(64)}`;
-const infuraId: string = process.env.INFURA_PROJECT_ID ?? 'F'.repeat(32);
-const etherscanKey: string = process.env.ETHERSCAN_KEY ?? 'F'.repeat(34);
+const privateKey = process.env.PRIVATE_KEY ?? `0x${'F'.repeat(64)}`;
+const infuraId = process.env.INFURA_PROJECT_ID ?? 'F'.repeat(32);
+const etherscanKey = process.env.ETHERSCAN_KEY ?? 'F'.repeat(34);
 
 export function getHardhatNetworkConfig(): Record<string, Network> {
   const networks: Record<string, Network> = require("./info/networks.json");
