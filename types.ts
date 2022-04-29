@@ -39,6 +39,6 @@ export type ChainType = {
   Chain: string,
   ChainID: number;
   RPC: string;
-  BlockExplorerDomain: string;
-  BlockExplorerBlock: string;
+  BlockExplorer: string;
+  Stage: string;
 };
