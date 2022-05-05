@@ -22,7 +22,7 @@ export async function getAllBrowserPath(section: string): Promise<Record<string,
         /**
          *  For exceptional example who uses Blockscout for block info inspection:
          *  their chain name will be included in pathname rather than hostname
-         */ 
+         */
         if(url.hostname == "blockscout.com"){
           const pathnameArray = url.pathname.split("/");
           const newPathname = Array.from(dropRight(pathnameArray, 2)).join("/");
