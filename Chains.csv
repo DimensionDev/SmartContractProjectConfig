@@ -29,3 +29,4 @@ conflux_espace_test,71,evmtestnet.confluxrpc.com,evmtestnet.confluxscan.io/block
 harmony,1666600000,api.harmony.one,explorer.harmony.one/block/,mainnet
 harmony_test,1666700000,api.s0.b.hmny.io,explorer.pops.one/block/,testnet
 kardia,24,rpc.kardiachain.io,explorer.kardiachain.io/block/,mainnet
+astar,592,astar.api.onfinality.io/public,blockscout.com/astar/block/,mainnet

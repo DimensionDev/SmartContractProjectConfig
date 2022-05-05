@@ -165,5 +165,10 @@
     "url": "https://rpc.kardiachain.io",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 24
+  },
+  "astar": {
+    "url": "https://astar.api.onfinality.io/public",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 592
   }
 }
