@@ -1,24 +1,29 @@
 import { resolve } from "path";
 import { BigNumber, ethers } from "ethers";
 import { config as envConfig } from "dotenv";
-import { Network, ContractAddresses, VRF } from "./types";
+import {
+  NetworksUserConfig,
+  ContractAddresses,
+  VRF,
+  HttpNetworkUserConfig,
+} from "./types";
 
 envConfig({ path: resolve(__dirname, "./.env") });
 
-const privateKey = process.env.PRIVATE_KEY ?? `0x${'F'.repeat(64)}`;
-const infuraId = process.env.INFURA_PROJECT_ID ?? 'F'.repeat(32);
-const etherscanKey = process.env.ETHERSCAN_KEY ?? 'F'.repeat(34);
+const privateKey = process.env.PRIVATE_KEY ?? `0x${"F".repeat(64)}`;
+const infuraId = process.env.INFURA_PROJECT_ID ?? "F".repeat(32);
+const etherscanKey = process.env.ETHERSCAN_KEY ?? "F".repeat(34);
 
-export function getHardhatNetworkConfig(): Record<string, Network> {
-  const networks: Record<string, Network> = require("./info/networks.json");
-  for (const chain of Object.keys(networks)) {
-    if (Array.isArray(networks[chain].accounts)) {
-      networks[chain].accounts = [privateKey];
+export function getHardhatNetworkConfig(): NetworksUserConfig {
+  const networks: NetworksUserConfig = require("./info/networks.json");
+  for (const networkName of Object.keys(networks)) {
+    if (Array.isArray(networks[networkName].accounts)) {
+      networks[networkName].accounts = [privateKey];
     }
-    if (!networks[chain].url) continue;
-    let url = networks[chain].url;
-    url = url?.replace("<INFURA-PROJECT-ID>", infuraId);
-    networks[chain].url = url;
+    if (networkName === "hardhat") continue;
+    const chain = networks[networkName] as HttpNetworkUserConfig;
+    chain.url = chain?.url.replace("<INFURA-PROJECT-ID>", infuraId);
+    networks[networkName] = chain;
   }
   return networks;
 }
@@ -50,12 +55,16 @@ export const EtherscanConfig = {
 };
 // #endregion
 
-export const getContractAddress = (): Record<string, ContractAddresses> => require("./info/contractAddress.json")
+export const getContractAddress = (): Record<string, ContractAddresses> =>
+  require("./info/contractAddress.json");
 
 export function getVrfConfig(): Record<string, VRF> {
   const vrfConfig: Record<string, VRF> = require("./info/chainlinkVRF.json");
   for (const chain of Object.keys(vrfConfig)) {
-    vrfConfig[chain].Fee = ethers.utils.parseUnits(String(vrfConfig[chain].Fee), 18);
+    vrfConfig[chain].Fee = ethers.utils.parseUnits(
+      String(vrfConfig[chain].Fee),
+      18
+    );
   }
   return vrfConfig;
 }
