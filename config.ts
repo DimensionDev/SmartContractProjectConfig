@@ -6,7 +6,7 @@ import { NetworksUserConfig, ContractAddresses, VRF, HttpNetworkUserConfig } fro
 envConfig({ path: resolve(__dirname, "./.env") });
 
 const privateKey = process.env.PRIVATE_KEY ?? `0x${"F".repeat(64)}`;
-const infuraId = process.env.INFURA_PROJECT_ID ?? "F".repeat(32);
+const alchemyId = process.env.ALCHEMY_PROJECT_ID ?? "F".repeat(32);
 const etherscanKey = process.env.ETHERSCAN_KEY ?? "F".repeat(34);
 
 export function getHardhatNetworkConfig(): NetworksUserConfig {
@@ -17,7 +17,7 @@ export function getHardhatNetworkConfig(): NetworksUserConfig {
     }
     if (networkName === "hardhat") continue;
     const chain = networks[networkName] as HttpNetworkUserConfig;
-    chain.url = chain.url?.replace("<INFURA-PROJECT-ID>", infuraId);
+    chain.url = chain.url?.replace("<ALCHEMY-PROJECT-ID>", alchemyId);
     networks[networkName] = chain;
   }
   return networks;

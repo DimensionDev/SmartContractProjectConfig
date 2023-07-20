@@ -14,19 +14,14 @@
     }
   },
   "mainnet": {
-    "url": "https://mainnet.infura.io/v3/<INFURA-PROJECT-ID>",
+    "url": "https://eth-mainnet.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 1
   },
-  "ropsten": {
-    "url": "https://ropsten.infura.io/v3/<INFURA-PROJECT-ID>",
+  "goerli": {
+    "url": "https://eth-goerli.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
-    "chainId": 3
-  },
-  "rinkeby": {
-    "url": "https://rinkeby.infura.io/v3/<INFURA-PROJECT-ID>",
-    "accounts": ["<PRIVATE_KEY>"],
-    "chainId": 4
+    "chainId": 5
   },
   "bsc_test": {
     "url": "https://data-seed-prebsc-1-s1.binance.org:8545",
@@ -39,7 +34,7 @@
     "chainId": 56
   },
   "matic_mumbai_test": {
-    "url": "https://matic-mumbai.chainstacklabs.com",
+    "url": "https://polygon-mumbai.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 80001
   },
@@ -59,15 +54,15 @@
     "chainId": 421611
   },
   "optimism": {
-    "url": "https://optimism-mainnet.infura.io/v3/<INFURA-PROJECT-ID>",
+    "url": "https://opt-mainnet.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 10,
     "ovm": true
   },
-  "optimism_kovan": {
-    "url": "https://optimism-kovan.infura.io/v3/<INFURA-PROJECT-ID>",
+  "optimism_goerli": {
+    "url": "https://opt-goerli.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
-    "chainId": 69,
+    "chainId": 420,
     "gasPrice": 15000000,
     "ovm": true
   },
@@ -75,11 +70,6 @@
     "url": "https://rpc.xdaichain.com",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 100
-  },
-  "goerli": {
-    "url": "https://goerli.infura.io/v3/<INFURA-PROJECT-ID>",
-    "accounts": ["<PRIVATE_KEY>"],
-    "chainId": 5
   },
   "fantom": {
     "url": "https://rpcapi.fantom.network",
