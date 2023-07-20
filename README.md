@@ -6,7 +6,7 @@ After integrated this submodule into your project, please check the following st
 
 - Update the submodule. Make sure the network info is up-to-date.
 - Create an `.env` file in the submodule root dir.
-- Set up the your `wallet private key`, [`infura key`](https://infura.io/) and [`etherscan api key`](https://docs.etherscan.io/getting-started/viewing-api-usage-statistics) in `.env` file. [`.env.example`](/.env.example) is an example which contains dummy configuration.
+- Set up the your `wallet private key`, [`alchemy key`](https://www.alchemy.com/) and [`etherscan api key`](https://docs.etherscan.io/getting-started/viewing-api-usage-statistics) in `.env` file. [`.env.example`](/.env.example) is an example which contains dummy configuration.
 
 ## NOTICE
 
