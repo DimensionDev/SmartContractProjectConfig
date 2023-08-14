@@ -11,7 +11,7 @@ arbitrum,42161,arb1.arbitrum.io/rpc,explorer.arbitrum.io/block/,mainnet
 arbitrum_rinkeby,421611,rinkeby.arbitrum.io/rpc,rinkeby-explorer.arbitrum.io/block/,testnet
 optimism,10,opt-mainnet.g.alchemy.com/v2/,optimistic.etherscan.io/block/,mainnet
 optimism_kovan,69,optimism-kovan.infura.io/v3/,kovan-optimistic.etherscan.io/batch/,testnet
-optimism_goerli,420,opt-goerli.g.alchemy.com/v2/,goerli-optimism.etherscan.io/block/
+optimism_goerli,420,opt-goerli.g.alchemy.com/v2/,goerli-optimism.etherscan.io/block/,testnet
 xdai,100,rpc.xdaichain.com,blockscout.com/xdai/mainnet/blocks/,mainnet
 fantom,250,rpcapi.fantom.network,ftmscan.com/block/,mainnet
 celo,42220,forno.celo.org,explorer.celo.org/block/,mainnet
