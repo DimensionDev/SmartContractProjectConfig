@@ -160,5 +160,15 @@
     "url": "https://astar.api.onfinality.io/public",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 592
+  },
+  "base": {
+    "url": "https://mainnet.base.org",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 8453
+  },
+  "base_goerli": {
+    "url": "https://goerli.base.org",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 84531
   }
 }

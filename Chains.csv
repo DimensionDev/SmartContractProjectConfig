@@ -31,3 +31,5 @@ harmony,1666600000,api.harmony.one,explorer.harmony.one/block/,mainnet
 harmony_test,1666700000,api.s0.b.hmny.io,explorer.pops.one/block/,testnet
 kardia,24,rpc.kardiachain.io,explorer.kardiachain.io/block/,mainnet
 astar,592,astar.api.onfinality.io/public,blockscout.com/astar/block/,mainnet
+base,8453,mainnet.base.org,basescan.org/block/,mainnet
+base_goerli,84531,goerli.base.org,goerli.basescan.org/block/8398615,testnet
