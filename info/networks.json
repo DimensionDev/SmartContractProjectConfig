@@ -170,5 +170,15 @@
     "url": "https://goerli.base.org",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 84531
+  },
+  "scroll_sepolia": {
+    "url": "https://sepolia-rpc.scroll.io",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 534351
+  },
+  "scroll": {
+    "url": "https://rpc.scroll.io",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 534352
   }
 }

@@ -32,4 +32,6 @@ harmony_test,1666700000,api.s0.b.hmny.io,explorer.pops.one/block/,testnet
 kardia,24,rpc.kardiachain.io,explorer.kardiachain.io/block/,mainnet
 astar,592,astar.api.onfinality.io/public,blockscout.com/astar/block/,mainnet
 base,8453,mainnet.base.org,basescan.org/block/,mainnet
-base_goerli,84531,goerli.base.org,goerli.basescan.org/block/8398615,testnet
+base_goerli,84531,goerli.base.org,goerli.basescan.org/block/,testnet
+scroll_sepolia,534351,sepolia-rpc.scroll.io,sepolia-blockscout.scroll.io/block/,testnet
+scroll,534352,rpc.scroll.io,scrollscan.com/block/,mainnet
