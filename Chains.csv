@@ -35,3 +35,5 @@ base,8453,mainnet.base.org,basescan.org/block/,mainnet
 base_goerli,84531,goerli.base.org,goerli.basescan.org/block/,testnet
 scroll_sepolia,534351,sepolia-rpc.scroll.io,sepolia-blockscout.scroll.io/block/,testnet
 scroll,534352,rpc.scroll.io,scrollscan.com/block/,mainnet
+x1_test,195,testrpc.x1.tech,okx.com/explorer/x1-test/block/,testnet
+

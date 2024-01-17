@@ -180,5 +180,10 @@
     "url": "https://rpc.scroll.io",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 534352
+  },
+  "x1_test": {
+    "url": "https://testrpc.x1.tech/",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 195
   }
 }
