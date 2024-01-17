@@ -1,9 +1,9 @@
-import path from "path";
-import fs from "fs/promises";
 import { parse } from "csv-parse/sync";
-import { ChainType } from "./types";
-import { URL } from "url";
+import fs from "fs/promises";
 import { dropRight } from "lodash";
+import path from "path";
+import { URL } from "url";
+import { ChainType } from "./types";
 
 const CHAIN_INFO_PATH = path.resolve(__dirname, "chains.csv");
 
@@ -24,7 +24,7 @@ export async function getAllBrowserPath(section: string): Promise<Record<string,
          *  For exceptional example who uses Blockscout for block info inspection:
          *  their chain name will be included in pathname rather than hostname
          */
-        if(url.hostname === "blockscout.com"){
+        if(["blockscout.com", "okx.com"].includes(url.hostname)){
           const pathnameArray = url.pathname.split("/");
           const newPathname = Array.from(dropRight(pathnameArray, 2)).join("/");
           url.pathname = `${newPathname}/address/`;
