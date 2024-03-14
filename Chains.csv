@@ -36,4 +36,7 @@ base_goerli,84531,goerli.base.org,goerli.basescan.org/block/,testnet
 scroll_sepolia,534351,sepolia-rpc.scroll.io,sepolia-blockscout.scroll.io/block/,testnet
 scroll,534352,rpc.scroll.io,scrollscan.com/block/,mainnet
 x1_test,195,testrpc.x1.tech,okx.com/explorer/x1-test/block/,testnet
+manta,169,pacific-rpc.manta.network/http,pacific-explorer.manta.network/block/,mainnet
+zksync_era,324,mainnet.era.zksync.io,explorer.zksync.io/block/,mainnet
+linea,59144,rpc.linea.build,lineascan.build/block/,mainnet
 

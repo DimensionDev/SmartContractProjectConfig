@@ -185,5 +185,20 @@
     "url": "https://testrpc.x1.tech/",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 195
+  },
+  "manta": {
+    "url": "https://pacific-rpc.manta.network/http",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 169
+  },
+  "zksync_era": {
+    "url": "https://mainnet.era.zksync.io",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 324
+  },
+  "linea": {
+    "url": "https://rpc.linea.build",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 59144
   }
 }
