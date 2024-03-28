@@ -200,5 +200,10 @@
     "url": "https://rpc.linea.build",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 59144
+  },
+  "x1": {
+    "url": "https://rpc.xlayer.tech",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 196
   }
 }
