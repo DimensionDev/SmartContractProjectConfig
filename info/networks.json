@@ -205,5 +205,10 @@
     "url": "https://rpc.xlayer.tech",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 196
+  },
+  "sei": {
+    "url": "https://evm-rpc.sei-apis.com",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 1329
   }
 }
