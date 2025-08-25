@@ -38,12 +38,12 @@
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 56
   },
-  "matic_mumbai_test": {
-    "url": "https://polygon-mumbai.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
+  "polygon_amoy": {
+    "url": "https://polygon-amoy.g.alchemy.com/v2/<ALCHEMY-PROJECT-ID>",
     "accounts": ["<PRIVATE_KEY>"],
-    "chainId": 80001
+    "chainId": 80002
   },
-  "matic": {
+  "polygon": {
     "url": "https://polygon-rpc.com/",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 137
