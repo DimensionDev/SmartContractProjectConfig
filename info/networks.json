@@ -215,5 +215,10 @@
     "url": "https://evm-rpc.sei-apis.com",
     "accounts": ["<PRIVATE_KEY>"],
     "chainId": 1329
+  },
+  "robinhood": {
+    "url": "https://rpc.mainnet.chain.robinhood.com",
+    "accounts": ["<PRIVATE_KEY>"],
+    "chainId": 4663
   }
 }
